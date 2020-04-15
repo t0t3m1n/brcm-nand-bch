@@ -1,3 +1,6 @@
+Note: Forked from https://github.com/ak-hard/brcm-nand-bch, and very rough code added alongside
+to reencode/decode ECC for T=4, N=14.  I've no idea which controllers this will work for, YMMV.
+
 # Generating BCH correction codes for Broadcom NAND controllers
 
 This piece of software emulates generation of BCH correction codes by the Broadcom NAND controller. 
