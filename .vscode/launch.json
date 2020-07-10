@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gcc-9 - Build and debug active file",
+            "name": "brcm-nand-bch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/brcm-nand-bch",
@@ -24,6 +24,30 @@
             ],
             "preLaunchTask": "tasks",
             "miDebuggerPath": "/usr/bin/gdb"
-        }
+        },
+        {
+            "name": "decodemod",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/decodemod",
+            "args": [
+                "-i", "../../target/brcm-nand-bch-t0t3m1n-tests/page_with_bitflip_84C0_err_offset_62A.bin",
+                "-o", "../../target/brcm-nand-bch-t0t3m1n-tests/output_page_with_bitflip_84C0_err_offset_62A.bin"
+             ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "tasks",
+            "miDebuggerPath": "/usr/bin/gdb"
+        } 
     ]
 }
