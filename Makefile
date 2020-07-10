@@ -1,4 +1,4 @@
-all: reencode decode decodemod brcm-nand-bch
+all: reencode decode decodemod brcm-nand-bch encode
 
 clean:
 	rm -f reencode decode decodemod brcm-nand-bch
@@ -14,4 +14,7 @@ decodemod: decodemod.c bch.c bch.h
 
 brcm-nand-bch: brcm-nand-bch.c bch.c bch.h
 	gcc -g -o brcm-nand-bch brcm-nand-bch.c bch.c
+
+encode: encode.c bch.c bch.h
+	gcc -g -o encode encode.c bch.c
 
