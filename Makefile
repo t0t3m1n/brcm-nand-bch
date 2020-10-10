@@ -1,20 +1,30 @@
-all: reencode decode decodemod brcm-nand-bch encode
+SRC_DIR = $(CURDIR)/src
+
+.PHONY: all
+.PHONY: brcm-nand-bch
+.PHONY: clean
+.PHONY: decode
+.PHONY: decodemod
+.PHONY: encode
+.PHONY: reencode
+
+all:
+	$(MAKE) -C "$(SRC_DIR)" all
+
+brcm-nand-bch:
+	$(MAKE) -C "$(SRC_DIR)" brcm-nand-bch
 
 clean:
-	rm -f reencode decode decodemod brcm-nand-bch
+	$(MAKE) -C "$(SRC_DIR)" clean
 
-reencode: reencode.c bch.c bch.h
-	gcc -g -o reencode reencode.c bch.c -lws2_32
+decode:
+	$(MAKE) -C "$(SRC_DIR)" decode
 
-decode: decode.c bch.c bch.h
-	gcc -g -o decode decode.c bch.c -lws2_32
+decodemod:
+	$(MAKE) -C "$(SRC_DIR)" decodemod
 
-decodemod: decodemod.c bch.c bch.h
-	gcc -g -o decodemod decodemod.c bch.c -lws2_32
+encode:
+	$(MAKE) -C "$(SRC_DIR)" encode
 
-brcm-nand-bch: brcm-nand-bch.c bch.c bch.h
-	gcc -g -o brcm-nand-bch brcm-nand-bch.c bch.c -lws2_32
-
-encode: encode.c bch.c bch.h
-	gcc -g -o encode encode.c bch.c -lws2_32
-
+reencode:
+	$(MAKE) -C "$(SRC_DIR)" reencode
