@@ -23,16 +23,16 @@
                 }
             ],
             "preLaunchTask": "tasks",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "miDebuggerPath": "gdb"
         },
         {
             "name": "decodemod",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/decodemod",
+            "program": "${workspaceFolder}/decodemod.exe",
             "args": [
-                "-i", "../../target/brcm-nand-bch-t0t3m1n-tests/page_with_bitflip_84C0_err_offset_62A.bin",
-                "-o", "../../target/brcm-nand-bch-t0t3m1n-tests/output_page_with_bitflip_84C0_err_offset_62A.bin"
+                "-i", "../../target/brcm-nand-bch-t0t3m1n-tests/dump0004.bin",
+                "-o", "../../target/brcm-nand-bch-t0t3m1n-tests/output_dump0004.bin"
              ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -46,14 +46,17 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "tasks",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "tasks Build All",
+            "miDebuggerPath": "gdb",
+            "sourceFileMap": {
+                "/d/": "D:/"
+            }
         },
         {
             "name": "encode",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/encode",
+            "program": "${workspaceFolder}/encode.exe",
             "args": [
                 "-i", "../../target/brcm-nand-bch-t0t3m1n-tests/output_dump0001_first_10_blocks.bin",
                 "-o", "../../target/brcm-nand-bch-t0t3m1n-tests/output_output_dump0001_first_10_blocks.bin"

@@ -70,7 +70,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#include <netinet/in.h> // htonl
+#include <winsock2.h> // htonl
 #include "bch.h"
 
 #define DIV_ROUND_UP(x,y) (((x) + (y) - 1) / (y))

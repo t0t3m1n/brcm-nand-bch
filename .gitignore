@@ -4,3 +4,8 @@ brcm-nand-bch-fork
 brcm-nand-bch
 decodemod
 encode
+decode.exe
+decodemod.exe
+encode.exe
+reencode.exe
+brcm-nand-bch.exe

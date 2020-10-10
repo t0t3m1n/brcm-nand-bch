@@ -158,7 +158,7 @@ int main(int argc, char **argv)
         goto exit;
     }
 
-    in_file = fopen(input_file, "r");
+    in_file = fopen(input_file, "rb");
     if (in_file == NULL)
     {
         printf("In file open error\n");
